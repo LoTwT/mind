@@ -9,6 +9,12 @@ Clean and simple app for viewing websites.
 
 Sometimes I want use a website to do something(eg. Show code on Typescript Playground), but browser has too many things(eg. Tabs, Bookmarks), not clean enough. So I create Mind. Clean, simple, easy to use.
 
+## Incoming Features
+
+- import/add website
+- export website
+- remove website
+
 ## Preview(Alpha)
 
 ### Out-of-box dark/light mode
