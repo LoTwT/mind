@@ -1,0 +1,34 @@
+{
+  "name": "mind",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "tauri": "tauri"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "@iconify-json/carbon": "^1.1.9",
+    "@tauri-apps/cli": "^1.1.0",
+    "@types/node": "^18.7.10",
+    "@unocss/reset": "^0.46.0",
+    "eslint": "^8.26.0",
+    "typescript": "^4.7.4",
+    "unocss": "^0.46.0",
+    "unocss-preset-scrollbar": "^0.2.1",
+    "vite": "^3.0.0",
+    "vite-plugin-solid": "^2.3.0"
+  },
+  "dependencies": {
+    "@colid/core": "^0.0.4",
+    "@tauri-apps/api": "^1.1.0",
+    "solid-js": "^1.4.7"
+  },
+  "eslintConfig": {
+    "extends": "@antfu"
+  }
+}
