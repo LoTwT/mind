@@ -26,3 +26,7 @@ Sometimes I want use a website to do something(eg. Show code on Typescript Playg
 - [UnoCSS](https://github.com/unocss/unocss)
 - [Vite](https://github.com/vitejs/vite)
 - [Colid](https://github.com/alexzhang1030/colid)
+
+## License
+
+MIT, alexzhang1030
