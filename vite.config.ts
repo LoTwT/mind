@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import solidPlugin from 'vite-plugin-solid'
 import UnoCSS from 'unocss/vite'
@@ -15,8 +16,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '~': '.',
-      '@': 'src',
+      '~': resolve(__dirname, '.'),
+      '@': resolve(__dirname, 'src'),
     },
   },
   // to make use of `TAURI_DEBUG` and other env variables
