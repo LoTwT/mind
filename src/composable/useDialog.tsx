@@ -12,7 +12,7 @@ const Dialog = (props: DialogChildrenProps) => {
           {header}
         </Show>
         <IconButton onclick={() => setShow(false)}>
-          <div i-carbon-close text-5></div>
+          <div i-icon-park-outline:close text-5></div>
         </IconButton>
       </div>
 

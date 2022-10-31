@@ -17,7 +17,7 @@ export const Header = () => {
 
       <div flex>
         <IconButton onclick={() => setShow(true)}>
-          <div i-carbon-add text-8></div>
+          <div i-icon-park-outline:plus text-5></div>
         </IconButton>
 
         <IconButton onclick={() => setIsDark(d => !d)}>

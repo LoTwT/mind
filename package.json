@@ -22,6 +22,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.29.0",
     "@iconify-json/carbon": "^1.1.9",
+    "@iconify-json/icon-park-outline": "^1.1.6",
     "@tauri-apps/cli": "^1.1.0",
     "@types/node": "^18.7.10",
     "@unocss/reset": "^0.46.0",

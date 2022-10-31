@@ -4,6 +4,7 @@ specifiers:
   '@antfu/eslint-config': ^0.29.0
   '@colid/core': ^0.0.6
   '@iconify-json/carbon': ^1.1.9
+  '@iconify-json/icon-park-outline': ^1.1.6
   '@tauri-apps/api': ^1.1.0
   '@tauri-apps/cli': ^1.1.0
   '@types/node': ^18.7.10
@@ -27,6 +28,7 @@ dependencies:
 devDependencies:
   '@antfu/eslint-config': 0.29.2_wyqvi574yv7oiwfeinomdzmc3m
   '@iconify-json/carbon': 1.1.9
+  '@iconify-json/icon-park-outline': 1.1.6
   '@tauri-apps/cli': 1.1.1
   '@types/node': 18.11.7
   '@unocss/reset': 0.46.0
@@ -525,6 +527,12 @@ packages:
 
   /@iconify-json/carbon/1.1.9:
     resolution: {integrity: sha512-O3geRhhnE9dDDC4oT6qwBs7sdc37R9UqftiG7BP8YVDw8OcXv8i95J0ZEkIfdOXFj1Wb6kC/Uu/6VTlAqotVXg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
+
+  /@iconify-json/icon-park-outline/1.1.6:
+    resolution: {integrity: sha512-NLwjpsuQAxsbSvcJ7vdNYeyouGs9ith3CHVXMVu/iTX4skjNhPDkjpLfjwPME4zdyWAskZH5RhNaL9+gD67MNQ==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: true
