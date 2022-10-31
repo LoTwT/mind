@@ -1,7 +1,7 @@
 import { BaseDirectory, createDir, readTextFile, writeTextFile } from '@tauri-apps/api/fs'
 import type { App } from './useData'
 
-const name = 'Alex_Mind'
+const name = 'com.alexzhang1030.mind'
 
 export const Paths: Record<string, Readonly<string>> = {
   Root: `${name}/database`,
