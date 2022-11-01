@@ -1,28 +1,64 @@
+import type { Accessor } from 'solid-js'
+import { createRenderEffect } from 'solid-js'
+import { createStore } from 'solid-js/store'
+import { useDialog } from '../composable/useDialog'
+
+type Accessors = [Accessor<string>, (v: string) => void]
+
 interface InputProps {
-  label: string
   name: string
+  accessor: Accessors
 }
 
-export const Input = ({ label, name }: InputProps) => {
+export function model(el: HTMLInputElement, accessor: () => Accessors) {
+  const [get, set] = accessor()
+  el.addEventListener('input', (e) => {
+    set((e.target as HTMLInputElement).value)
+  })
+  createRenderEffect(() => el.value = get())
+}
+
+export const Input = ({ name, accessor }: InputProps) => {
   return (
-    <div>
-      <label for="email" sr-only>{label}</label>
+    <div w-full>
+      <label for="email" sr-only>{name}</label>
       <div relative>
         <input
-          type={name}
+          type="text"
           w-full rounded-lg border-gray-200 dark:border-gray-800 border-1 p-4 pr-12 text-sm shadow-sm
           dark:bg-gray-500 dark:outline-none
-          placeholder={`Please type ${label}`}
+          placeholder={`Please type ${name}`}
+          required
+          use:model={accessor}
         />
       </div>
     </div>
   )
 }
 
+const [form, setForm] = createStore({
+  name: '',
+  link: '',
+})
+
 export const ImportDialog = () => {
   return (
-    <div py-5>
-      <Input label="website link" name="website-link" />
+    <div py-5 flex="~ wrap" gap-5>
+      <Input name="website name" accessor={[() => form.name, (v) => { setForm({ name: v }) }]} />
+      <Input name="website link" accessor={[() => form.link, (v) => { setForm({ link: v }) }]} />
     </div>
   )
+}
+
+const { setShow: setImportShow } = useDialog({
+  title: 'Add Website',
+  content: <ImportDialog />,
+  onConfirm() {
+    // eslint-disable-next-line no-console
+    console.log(form)
+  },
+})
+
+export const showImport = () => {
+  setImportShow(true)
 }

@@ -5,10 +5,10 @@ import Button from '../components/Button'
 import IconButton from '@/components/IconButton'
 
 const Dialog = (props: DialogChildrenProps) => {
-  const { title, content, setShow } = props
+  const { title, content, setShow, onConfirm } = props
   return (
     <div bg-white dark:bg="[var(--ds-color)]" dark:text-white
-      py-2 px-4 rounded-3 min-w-400px shadow-2xl
+      py-2 px-4 rounded-2 min-w-400px shadow-2xl
     >
       <div w-full h-14 flex justify-between items-center>
         <div text-26px>{ title }</div>
@@ -21,7 +21,7 @@ const Dialog = (props: DialogChildrenProps) => {
 
       <div w-full h-full py-3 box-border flex justify-end gap-3>
          <Button bType='default' onclick={() => setShow(false)}>Cancel</Button>
-         <Button bType='primary'>Confirm</Button>
+         <Button bType='primary' onclick={() => onConfirm()}>Confirm</Button>
       </div>
     </div>
   )
@@ -30,6 +30,7 @@ const Dialog = (props: DialogChildrenProps) => {
 interface UseDialogParams {
   title: string
   content: JSX.Element
+  onConfirm: () => void
 }
 
 type DialogChildrenProps = UseDialogParams & {
