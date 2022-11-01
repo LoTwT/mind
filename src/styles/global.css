@@ -31,12 +31,3 @@ body {
 .dialog-overlay-hidden {
   --at-apply: hidden;
 }
-
-@keyframe dialogShow {
-  from {
-    translateX(-100%);
-  }
-  to {
-    translateX(0);
-  }
-}

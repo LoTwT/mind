@@ -8,7 +8,7 @@ const Dialog = (props: DialogChildrenProps) => {
   const { title, content, setShow } = props
   return (
     <div bg-white dark:bg="[var(--ds-color)]" dark:text-white
-      py-2 px-4 rounded-3 min-w-400px shadow-2xl
+      py-2 px-4 rounded-3 min-w-400px shadow-2xl class="dialog"
     >
       <div w-full h-14 flex justify-between items-center>
         <div text-26px>{ title }</div>
