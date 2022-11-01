@@ -1,9 +1,11 @@
 .button-base {
-  --at-apply: inline-flex justify-center items-center w-auto h-auto px-4 py-2 rounded;
+  --at-apply: inline-flex justify-center items-center
+              w-auto h-auto px-3 py-2 rounded transition-colors
+              text-sm;
 }
 
 .button-default {
-  --at-apply: bg-transparent border-1 border-gray;
+  --at-apply: bg-transparent border-1 border-gray-500;
 }
 
 .button-success {
@@ -15,7 +17,7 @@
 }
 
 .button-primary {
-  --at-apply: bg-blue/85 hover:bg-blue;
+  --at-apply: bg-blue-600 hover:bg-blue-500 active:bg-blue-800 text-white;
 }
 
 .button-warning {

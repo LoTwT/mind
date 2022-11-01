@@ -1,13 +1,13 @@
 import { useDark } from '@colid/core'
+import { ImportDialog } from './Actions'
 import IconButton from '@/components/IconButton'
 import { useDialog } from '@/composable/useDialog'
 
 export const Header = () => {
   const { setIsDark } = useDark()
   const { setShow } = useDialog({
-    // header: <div>header</div>,
-    children: <div>dialog content</div>,
-    // footer: <div>footer</div>,
+    title: 'Add Website',
+    content: <div><ImportDialog /></div>,
   })
   return () => (
     <div text-10 w-full flex justify-between items-start mb-5>

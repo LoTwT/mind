@@ -1,34 +1,35 @@
 import type { JSX } from 'solid-js'
 import { createEffect, createSignal } from 'solid-js'
-import { Portal, Show } from 'solid-js/web'
+import { Portal } from 'solid-js/web'
+import Button from '../components/Button'
 import IconButton from '@/components/IconButton'
 
 const Dialog = (props: DialogChildrenProps) => {
-  const { header, children, footer, setShow } = props
+  const { title, content, setShow } = props
   return (
-    <div bg-white dark:bg="[var(--dp-color)]" py-2 px-4>
-      <div w-full h-8 flex justify-between items-center border-b>
-        <Show when={!!header} fallback={<div />}>
-          {header}
-        </Show>
+    <div bg-white dark:bg="[var(--ds-color)]" dark:text-white
+      py-2 px-4 rounded-3 min-w-400px shadow-2xl
+    >
+      <div w-full h-14 flex justify-between items-center>
+        <div text-26px>{ title }</div>
         <IconButton onclick={() => setShow(false)}>
           <div i-icon-park-outline:close text-5></div>
         </IconButton>
       </div>
 
-      {children}
+      {content}
 
-      <Show when={!!footer} fallback={<div />}>
-        {footer}
-      </Show>
+      <div w-full h-full py-3 box-border flex justify-end gap-3>
+         <Button bType='default' onclick={() => setShow(false)}>Cancel</Button>
+         <Button bType='primary'>Confirm</Button>
+      </div>
     </div>
   )
 }
 
 interface UseDialogParams {
-  header?: JSX.Element
-  children: JSX.Element
-  footer?: JSX.Element
+  title: string
+  content: JSX.Element
 }
 
 type DialogChildrenProps = UseDialogParams & {
@@ -42,7 +43,7 @@ export const useDialog = (params: UseDialogParams) => {
     children: <Dialog {...params} setShow={setShow} />,
     ref: (el) => {
       createEffect(() => {
-        el.className = `mind-dialog mind-dialog-${
+        el.className = `dialog-overlay dialog-overlay-${
           isShow() ? 'show' : 'hidden'
         }`
       })
