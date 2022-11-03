@@ -1,3 +1,4 @@
+import { invoke } from '@tauri-apps/api'
 import type { Accessor } from 'solid-js'
 import { createRenderEffect } from 'solid-js'
 import { createStore } from 'solid-js/store'
@@ -53,9 +54,14 @@ export const ImportDialog = () => {
 const { setShow: setImportShow } = useDialog({
   title: 'Add Website',
   content: <ImportDialog />,
-  onConfirm() {
+  async onConfirm() {
     // eslint-disable-next-line no-console
     console.log(form)
+    const res = await invoke('fetch_title_description', { link: 'https://baidu.com' })
+    // eslint-disable-next-line no-console
+    console.log({
+      res,
+    })
   },
 })
 
